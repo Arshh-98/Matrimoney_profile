@@ -24,6 +24,7 @@ const Biodata = () => {
 
   // Album modal state
   const [showAlbum, setShowAlbum] = useState(false);
+  const [showContact, setShowContact] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const albumImages = [
     "/PXL_20230311_121315152.jpg",
@@ -53,9 +54,9 @@ const Biodata = () => {
 
   return (
     <div className="biodata-body">
-      <button className="sticky-album-btn" onClick={() => setShowAlbum(true)}>
+      {/* <button className="sticky-album-btn" onClick={() => setShowAlbum(true)}>
         View Album
-      </button>
+      </button> */}
       {/* BACKGROUND DECOR */}
       <div className="bg-glow-1"></div>
       <div className="bg-glow-2"></div>
@@ -126,7 +127,7 @@ const Biodata = () => {
           </div>
           <div className="visual-half animate-on-scroll">
             <div className="visual-box animate-float">
-              <img src="/IMG_20260219_233805_442.webp" alt="Mountain" />
+              <img src="/IMG_20260219_233805_442.png" alt="Mountain" />
             </div>
           </div>
         </div>
@@ -180,7 +181,7 @@ const Biodata = () => {
 
       {/* DETAILED HOBBIES SECTION */}
       <section className="section-padding container hobbies-detailed">
-        <h2 className="section-title text-center animate-on-scroll">
+        <h2 className="section-title text-center animate-on-scroll margin64">
           Interests
         </h2>
 
@@ -247,7 +248,7 @@ const Biodata = () => {
       </section>
 
       {/* FAMILY SECTION */}
-      <section className="section-padding container">
+      <section className="section-padding container margin64">
         <div
           className="glass-card animate-on-scroll"
           style={{ textAlign: "center" }}>
@@ -260,7 +261,7 @@ const Biodata = () => {
               color: "var(--text-dim)",
             }}>
             Raised in a value-driven, close-knit family. Father is a Retired
-            Professional completing his tenure in Riyadh in Saudi Lighting as a
+            Professional completed his tenure in Saudi Lighting Riyadh as a
             Quality Inspector and Mother is a Govt Teacher. I have one younger
             sibling who is working at an MNC. We value tradition, honesty, and
             modern education.
@@ -269,7 +270,7 @@ const Biodata = () => {
       </section>
 
       {/* CALL TO ACTION */}
-      <section className="section-padding container text-center">
+      <section className="section-padding container text-center margin64">
         <div className="reveal animate-on-scroll">
           <h2 style={{ fontSize: "3rem", marginBottom: "30px" }}>
             Let's Start a Conversation
@@ -278,8 +279,18 @@ const Biodata = () => {
             If our values align, I'd love to hear from you.
           </p>
           <div className="cta-button-group" style={{ marginTop: "40px" }}>
-            <button className="cta-primary">Share Interest</button>
-            <button className="cta-secondary">Download PDF</button>
+            <button
+              className="cta-primary"
+              onClick={() => setShowContact(true)}>
+              Get In Touch
+            </button>
+            {/* <a
+              href="/Arshad_Ahmed_Biodata.pdf"
+              download
+              className="cta-secondary"
+              style={{ textDecoration: "none", display: "inline-block" }}>
+              Download PDF
+            </a> */}
           </div>
         </div>
       </section>
@@ -356,20 +367,54 @@ const Biodata = () => {
           .section-title { font-size: 2.22rem; }
         }
       `}</style>
+      {showContact && (
+        <div className="contact-overlay" onClick={() => setShowContact(false)}>
+          <div className="contact-popup" onClick={(e) => e.stopPropagation()}>
+            <button
+              className="contact-close"
+              onClick={() => setShowContact(false)}>
+              ×
+            </button>
+            <h2 className="popup-title">Connect with Me</h2>
+            <div className="contact-info">
+              <div className="contact-item">
+                <span className="contact-icon">📞</span>
+                <a href="tel:+917338421743">+91 7338421743</a>
+              </div>
+              <div className="contact-item">
+                <span className="contact-icon">📧</span>
+                <a href="mailto:itsarshadahmed98@gmail.com">
+                  itsarshadahmed98@gmail.com
+                </a>
+              </div>
+            </div>
+            <div className="whatsapp-button">
+              <a
+                href="https://wa.me/917338421743"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="wa-link">
+                <svg className="wa-icon" viewBox="0 0 24 24">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.181-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217s.231.006.332.013c.101.007.237-.038.37.281.144.35.491 1.197.534 1.285.043.088.072.19.014.305s-.088.132-.175.231c-.087.099-.184.22-.263.295-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.288.065.397-.06c.108-.125.469-.545.594-.731.125-.185.251-.155.424-.092.174.063 1.103.52 1.29.614.188.094.312.14.358.214.046.074.046.427-.098.832z" />
+                </svg>
+                Message on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
       {showAlbum && (
         <div className="album-overlay" onClick={() => setShowAlbum(false)}>
           <div className="album-popup" onClick={(e) => e.stopPropagation()}>
             <button className="album-close" onClick={() => setShowAlbum(false)}>
               ×
             </button>
-
             <div className="album-view">
               <img
                 src={albumImages[currentIndex]}
                 alt={`Album ${currentIndex + 1}`}
                 className="album-img-main"
               />
-
               <button className="nav-btn prev" onClick={prevImage}>
                 <svg viewBox="0 0 24 24">
                   <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
@@ -381,7 +426,6 @@ const Biodata = () => {
                 </svg>
               </button>
             </div>
-
             <div className="album-indicators">
               {albumImages.map((_, idx) => (
                 <div
