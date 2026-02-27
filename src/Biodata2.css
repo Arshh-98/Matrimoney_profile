@@ -1,0 +1,100 @@
+:root {
+  --b2-neon: #39ff14;
+  --b2-pink: #ff00ff;
+  --b2-bg: #000000;
+  --b2-surface: #111111;
+}
+
+.b2-body {
+  background-color: var(--b2-bg);
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  text-transform: uppercase;
+}
+
+.b2-hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.b2-marquee {
+  white-space: nowrap;
+  font-size: 15vw;
+  font-weight: 900;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.2);
+  color: transparent;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.b2-profile-pic {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40vh;
+  height: 50vh;
+  border: 1px solid var(--b2-neon);
+  z-index: 2;
+  overflow: hidden;
+}
+
+.b2-profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+  transition: 0.5s;
+}
+
+.b2-profile-pic:hover img {
+  filter: grayscale(0);
+}
+
+.b2-section {
+  padding: 100px 5%;
+  border-top: 1px solid #333;
+}
+
+.b2-title {
+  font-size: 5rem;
+  color: var(--b2-neon);
+  line-height: 0.8;
+  margin-bottom: 50px;
+}
+
+.b2-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: #333;
+}
+
+.b2-item {
+  background: var(--b2-bg);
+  padding: 60px;
+}
+
+.b2-label {
+  color: #666;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.b2-value {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .b2-title { font-size: 3rem; }
+  .b2-grid { grid-template-columns: 1fr; }
+}

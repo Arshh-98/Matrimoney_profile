@@ -1,0 +1,95 @@
+:root {
+  --b3-gold: #c5a059;
+  --b3-navy: #0a192f;
+  --b3-cream: #fdfbf7;
+  --b3-text: #0a192f;
+}
+
+.b3-body {
+  background-color: var(--b3-cream);
+  color: var(--b3-text);
+  font-family: 'Playfair Display', serif;
+  overflow-x: hidden;
+}
+
+.b3-hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(10, 25, 47, 0.05), rgba(10, 25, 47, 0.05)), url('https://www.transparenttextures.com/patterns/cream-paper.png');
+  border-bottom: 20px solid var(--b3-gold);
+}
+
+.b3-header {
+  text-align: center;
+  border: 1px solid var(--b3-gold);
+  padding: 60px;
+  position: relative;
+}
+
+.b3-header::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1px solid var(--b3-gold);
+}
+
+.b3-name {
+  font-size: 5rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.b3-section {
+  padding: 100px 10%;
+}
+
+.b3-title {
+  font-size: 3rem;
+  font-style: italic;
+  margin-bottom: 50px;
+  border-bottom: 2px solid var(--b3-gold);
+  display: inline-block;
+}
+
+.b3-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.b3-card {
+  border-left: 5px solid var(--b3-gold);
+  padding-left: 30px;
+}
+
+.b3-label {
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  color: var(--b3-gold);
+}
+
+.b3-img-frame {
+  width: 100%;
+  aspect-ratio: 4/5;
+  border: 15px solid white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.b3-img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .b3-name { font-size: 3rem; }
+  .b3-grid { grid-template-columns: 1fr; }
+}
