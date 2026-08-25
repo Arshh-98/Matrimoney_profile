@@ -27,9 +27,9 @@ const Biodata = () => {
   const [showContact, setShowContact] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const albumImages = [
-    "/PXL_20230311_121315152.jpg",
-    "/IMG_20260219_233805_442.png",
-    "/pic1.jpg",
+    `${import.meta.env.BASE_URL}PXL_20230311_121315152.webp`,
+    `${import.meta.env.BASE_URL}IMG_20260219_233805_442.webp`,
+    `${import.meta.env.BASE_URL}arshad_riding.webp`,
     "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop", // Music
     "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop", // Fitness
   ];
@@ -82,7 +82,7 @@ const Biodata = () => {
         </div>
         <div className="hero-image-vessel">
           <img
-            src="/PXL_20230311_121315152.jpg"
+            src={`${import.meta.env.BASE_URL}PXL_20230311_121315152.webp`}
             // src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop"
             alt="Arshad Portrait"
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
@@ -127,7 +127,7 @@ const Biodata = () => {
           </div>
           <div className="visual-half animate-on-scroll">
             <div className="visual-box animate-float">
-              <img src="/IMG_20260219_233805_442.png" alt="Mountain" />
+              <img src={`${import.meta.env.BASE_URL}IMG_20260219_233805_442.webp`} alt="Mountain" />
             </div>
           </div>
         </div>
@@ -188,7 +188,7 @@ const Biodata = () => {
         {/* Row 1: Photo Left, Description Right */}
         <div className="hobby-row animate-on-scroll">
           <div className="hobby-image">
-            <img src="/arshad_with_guitar.png" alt="Music" />
+            <img src={`${import.meta.env.BASE_URL}arshad_with_guitar.webp`} alt="Music" />
           </div>
           <div className="hobby-desc">
             <h3>Musical Soul</h3>
@@ -214,7 +214,7 @@ const Biodata = () => {
             </p>
           </div>
           <div className="hobby-image">
-            <img src="/arshad_fitness.png" alt="Fitness" />
+            <img src={`${import.meta.env.BASE_URL}arshad_fitness.webp`} alt="Fitness" />
           </div>
         </div>
         <div className="hobby-row reverse  animate-on-scroll">
@@ -228,7 +228,7 @@ const Biodata = () => {
             </p>
           </div>
           <div className="hobby-image">
-            <img src="/arshad_trek.png" alt="Travel" />
+            <img src={`${import.meta.env.BASE_URL}arshad_trek.webp`} alt="Travel" />
           </div>
         </div>
         <div className="hobby-row   animate-on-scroll">
@@ -242,7 +242,7 @@ const Biodata = () => {
             </p>
           </div>
           <div className="hobby-image">
-            <img src="arshad_riding.png" alt="Biking" />
+            <img src={`${import.meta.env.BASE_URL}arshad_riding.webp`} alt="Biking" />
           </div>
         </div>
       </section>
@@ -430,9 +430,8 @@ const Biodata = () => {
               {albumImages.map((_, idx) => (
                 <div
                   key={idx}
-                  className={`indicator ${
-                    idx === currentIndex ? "active" : ""
-                  }`}
+                  className={`indicator ${idx === currentIndex ? "active" : ""
+                    }`}
                   onClick={() => setCurrentIndex(idx)}></div>
               ))}
             </div>
