@@ -100,7 +100,7 @@ const Biodata = () => {
             </div>
             <div className="stat-item">
               <span className="stat-label">Height</span>
-              <span className="stat-value">5'7"</span>
+              <span className="stat-value">5'6"</span>
             </div>
             <div className="stat-item">
               <span className="stat-label">Location</span>

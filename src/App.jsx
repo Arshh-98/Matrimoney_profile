@@ -24,7 +24,7 @@ function App() {
   ];
 
   const renderVariant = () => {
-    switch(variant) {
+    switch (variant) {
       case 0: return <Biodata />;
       case 1: return <Biodata1 />;
       case 2: return <Biodata2 />;
